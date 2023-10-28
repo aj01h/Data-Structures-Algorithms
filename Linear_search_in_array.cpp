@@ -1,25 +1,26 @@
-// Linear search in array 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
-    int a[5] = {7,6,3,9,5};
-    int num, id=-1;
-    cout<<"Enter number you wanna search: ";
-    cin>>num;
-    for (int i = 0; i<5; i++)
-    {
-        if(a[i]==num)
-        {
-            id=i;
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int target;
+    bool found = false;
+
+    cout << "Enter the number to search: ";
+    cin >> target;
+
+    // Linear search
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] == target) {
+            found = true;
+            cout << "Element found at index " << i << endl;
+            break; // If found, exit the loop
         }
     }
-    if (id==-1)
-    {
-        cout<<"Number not found.";
+
+    if (!found) {
+        cout << "Element not found in the array." << endl;
     }
-    else{
-        cout<<"Number found at index of: "<<id;
-    }
+
     return 0;
 }
